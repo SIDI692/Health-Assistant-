@@ -22,7 +22,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)  # utile pour Render 
 # Config de la base de données (Render fournit DATABASE_URL)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///local.db")
 app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-    "pool_recycle": 300,
+    "pool_recycle": 80,
     "pool_pre_ping": True,
 }
 
