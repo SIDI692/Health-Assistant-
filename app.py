@@ -129,10 +129,6 @@ def reset():
     reset_history()
     return redirect(url_for('history'))
 
-# ====== Run =====
-if __name__ == "__main__":
-    app.run(debug=True)
-
 imc_value = poids / (taille ** 2)
 if imc_value < 10 or imc_value > 70:
     raise ValueError("Valeur d'IMC irréaliste")
